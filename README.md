@@ -20,4 +20,9 @@ Model compared so far:
 First, we created locally the visualization tool with html, css and js. Models were trained in python and results saved in text file then uploaded in the tool.
 Then, we included the tool and the training all together in jupyter notebook by means of Svelte, which helped us create the widget already working with predictions resulting from our training. 
 
+For visualization tool, please make reference to:
+- index.html
+- style.css
+- prova.js
+- dragging.js
 
