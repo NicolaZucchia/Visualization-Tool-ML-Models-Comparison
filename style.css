@@ -1,0 +1,104 @@
+.section1 {
+    display: inline-block;
+    width: 30%;
+    margin-top: 0px;
+  }
+  .section2 {
+    display: inline-block;
+    width: 40%;
+    margin-top: 0px;
+  }
+  .section3 {
+    width: 30%;
+    margin-top: 0px;
+  }
+  .container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  #chart {
+    width: 400px;
+    height: 400px;
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .vertical-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-left: 1px solid black;
+    height: 80%;
+  }
+  .left-vertical-line {
+    left: 20%;
+    top: 10%;
+  }
+  .right-vertical-line {
+    right: 20%;
+    top: 10%;
+  }
+  .model-name {
+    position: absolute;
+    bottom: -25px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    width: 40%;
+  }
+  .left-model-name {
+    left: 0%;
+  }
+  .right-model-name {
+    right: 0%;
+  }
+  .max-text {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .min-text {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .dot {
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    mix-blend-mode: multiply;
+    fill: rgba(0, 0, 0, 0.785);
+    stroke: rgba(0, 0, 0, 0.785);
+    stroke-width: 0.5px;
+    z-index: 0.1;
+  }
+  .line {
+    mix-blend-mode: multiply;
+    stroke: rgba(0, 0, 0, 0.785);
+    stroke-width: 0.5px;
+  }
+  svg circle:hover,
+  svg circle:focus{
+    fill: red;
+    stroke: red;
+    cursor: pointer;
+  }
+  svg line:hover,
+  svg line:focus{
+    fill: red;
+    stroke: red;
+    cursor: pointer;
+  }

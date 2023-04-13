@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Model Comparison</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <section>
+      <h1 style="text-align: center;">Model Comparison</h1>
+    </section>
+    <div class="container">
+  <section class="section1">
+    <h1>Choose a text file for your predicted values</h1>
+    <div>
+      <input type="file" id="file-upload" />
+      <button onclick="uploadFile()">Upload</button>
+    </div>
+    <div>
+      <h1>Filter by difference in prediction</h1>
+      <div>
+        <p>Choose if you want to consider differences in absolute value.</p>
+        <form action="javascript:absVal()">
+          <label for="abs">Absolute value:</label>
+          <select name="abs" id="abs">
+            <option value="false">False</option>
+            <option value="true">True</option>
+          </select>
+          <input type="submit" value="Apply">
+        </form>
+      </div>
+      <div>
+        <label for="filter-input-max">Max difference:</label>
+        <input id="filter-input-max" type="number" min="-1" max="1" value="1">
+      </div>
+      <div>
+        <label for="filter-input-min">Min difference:</label>
+        <input id="filter-input-min" type="number" min="-1" max="1" value="-1">
+      </div>  
+      <p>Note: default settings include all data points</p>
+      <button onclick="hideOnDiff()">Apply</button>
+    </div>
+    <h1>Values selected</h1>
+    <p>Here we print the predictions of both models for the selected dots.</p>
+    <div>
+      <svg width="400" height="100">
+        <rect x="10" y="10" width="390" height="80" fill="#f0f0f0" stroke="black" stroke-width="1" />
+        <text x="20" y="40" font-size="16" fill="black">Output:</text>
+        <text id="output" x="100" y="40" font-size="16" fill="black"></text>
+        <text x="20" y="70" font-size="16" fill="black">Difference:</text>
+        <text id="output-info" x="100" y="70" font-size="16" fill="black"></text>
+      </svg>
+    </div> 
+  </section>
+  <section class="section2">
+    <div id="chart">
+      <div class="vertical-line left-vertical-line"></div>
+      <div class="vertical-line right-vertical-line"></div>
+      <div class="model-name left-model-name">Model 1</div>
+      <div class="model-name right-model-name">Model 2</div>
+      <div class="max-text"></div>
+      <div class="min-text"></div>
+    </div>
+  </section>
+  <section class="section3">
+    <style>
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			padding: 5px;
+			text-align: center;
+		}
+	</style>
+    <h1 id="header3">SHAPLEY VALUES</h1>
+    <div id="choosing-instance-section">
+      <label for="choosing-instance">Choose instance:</label>
+      <input id="choosing-instance" type="number" min="0" max="0" value="0">
+      <button>Go</button>  
+    </div>
+    <div id="table-container"></div>
+  </section>
+</div>
+
+<script src="dragging.js"></script>
+<script src="prova.js"></script>
+
+  </body>
+</html>
